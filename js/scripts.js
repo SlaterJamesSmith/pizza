@@ -1,6 +1,6 @@
-function Pizza (size, toppings) {
-  this.size = size
-  this.toppings = toppings
+function Pizza () {
+  this.size = 0
+  this.toppings = []
   this.cost = 0
 }
 
@@ -12,13 +12,17 @@ var newPizza = new Pizza;
 $(document).ready(function () {
 
   $("#size-button").click(function () {
-    newPizza.size = 12
+    newPizza.size = $("#size").val();
+
+    $("input:checkbox[name=topping-check]:checked").each(function(){
+      // debugger;
+      var newPizzaTopping = $(this).val();
+      newPizza.toppings.push(newPizzaTopping);
+  });
 
 
-  })
 
 
 
-
-
+});
 });
