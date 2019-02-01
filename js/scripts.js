@@ -1,7 +1,7 @@
 function Pizza () {
-  this.size = 0
-  this.toppings = []
-  this.cost = 0
+  this.size = 0;
+  this.toppings = [];
+  this.cost = 0;
 }
 
 Pizza.prototype.costCalc = function () {
@@ -12,6 +12,9 @@ var newPizza = new Pizza;
 $(document).ready(function () {
 
   $("#size-button").click(function () {
+    newPizza.size = 0;
+    newPizza.toppings = [];
+    newPizza.cost = 0;
     newPizza.size = $("#size").val();
 
     $("input:checkbox[name=topping-check]:checked").each(function(){
@@ -21,8 +24,11 @@ $(document).ready(function () {
     newPizza.costCalc();
     $(".result").text("Your "+$("#size option:selected").text().toLowerCase()+" pizza")
     // debugger;
-    if (newPizza.toppings.length > 0) {
-      $(".result").append(" "+newPizza.toppings.join(", "))
+    if (newPizza.toppings.length > 1) {
+      $(".result").append(" with "+newPizza.toppings.slice(0, (newPizza.toppings.length - 1)).join(", ").toLowerCase()+" and "+newPizza.toppings.slice(newPizza.toppings.length - 1).join().toLowerCase()+" will be "+newPizza.cost)
+    }
+    else if (newPizza.toppings.length === 1) {
+      $(".result").append(" with "+newPizza.toppings[0].toLowerCase()+" will be "+newPizza.cost)
     }
     })
   });
