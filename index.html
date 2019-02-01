@@ -13,34 +13,37 @@
       <form class="pizza-calc" action="index.html" method="post">
         <div>
           <label for="pizza-calc">Size</label>
-          <select class="form-control">
+          <select id="size" class="form-control">
             <option value="3">Extra Large</option>
             <option value="2">Large</option>
             <option value="1">Medium</option>
             <option value="0">Small</option>
-            </select>
+          </select>
+          <button id="size-button" type="button" name="button">Submit</button>
         </div>
       </form>
+      <div class="checkboxes">
 
       <label for="toppings">Toppings</label>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-          <label class="form-check-label" for="exampleRadios1">
+          <input class="form-check-input" type="checkbox" name="toppingCheck" id="toppingCheck1" value="option1">
+          <label class="form-check-label" for="toppingCheck1">
             Extra Cheese
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="option2">
-          <label class="form-check-label" for="exampleRadios2">
+          <input class="form-check-input" type="checkbox" name="toppingCheck" id="toppingCheck2" value="option2">
+          <label class="form-check-label" for="toppingCheck2">
             Pepperoni
           </label>
         </div>
         <div class="form-check disabled">
-          <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios3" value="option3">
-          <label class="form-check-label" for="exampleRadios3">
+          <input class="form-check-input" type="checkbox" name="toppingCheck" id="toppingCheck3" value="option3">
+          <label class="form-check-label" for="toppingCheck3">
             Anchovies
           </label>
         </div>
+      </div>
 
 
     </div>
