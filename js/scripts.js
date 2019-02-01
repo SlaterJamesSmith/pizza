@@ -10,7 +10,6 @@ Pizza.prototype.costCalc = function () {
 
 var newPizza = new Pizza;
 $(document).ready(function () {
-
   $("#size-button").click(function () {
     newPizza.size = 0;
     newPizza.toppings = [];
@@ -23,13 +22,13 @@ $(document).ready(function () {
     newPizza.costCalc();
     $(".result").text("Your "+$("#size option:selected").text().toLowerCase()+" pizza")
     if (newPizza.toppings.length > 1) {
-      $(".result").append(" with "+newPizza.toppings.slice(0, (newPizza.toppings.length - 1)).join(", ").toLowerCase()+" and "+newPizza.toppings.slice(newPizza.toppings.length - 1).join().toLowerCase()+" will be "+newPizza.cost)
+      $(".result").append(" with "+newPizza.toppings.slice(0, (newPizza.toppings.length - 1)).join(", ").toLowerCase()+" and "+newPizza.toppings.slice(newPizza.toppings.length - 1).join().toLowerCase()+" will be "+newPizza.cost+".")
     }
     else if (newPizza.toppings.length === 1) {
-      $(".result").append(" with "+newPizza.toppings[0].toLowerCase()+" will be "+newPizza.cost)
+      $(".result").append(" with "+newPizza.toppings[0].toLowerCase()+" will be "+newPizza.cost+".")
     }
     else if (newPizza.toppings.length === 0) {
-      $(".result").append(" will be "+newPizza.cost)
+      $(".result").append(" will be "+newPizza.cost+".")
     }
   })
 });
