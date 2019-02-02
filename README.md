@@ -6,7 +6,7 @@
 
 ## Description
 
-_A simple form that will calculate the cost of a single pizza purchase based on pie size and number of toppings."_
+_A simple form that will calculate the cost of a single pizza purchase based on pie size and number of toppings._
 
 #### Program behavior specifications:
 * _The program will return pricing for pizza with specific specifications set by the user._
