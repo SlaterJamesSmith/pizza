@@ -8,27 +8,34 @@ Pizza.prototype.costCalc = function () {
   this.cost = "$"+ (10 + (this.size * 3) + (this.toppings.length * 2));
 }
 
+Pizza.prototype.new = function () {
+  this.size = $("#size").val();
+  this.toppings = [];
+  this.cost = 0;
+}
+
+Pizza.prototype.print = function () {
+  $(".result").text("Your "+$("#size option:selected").text().toLowerCase()+" pizza")
+  if (this.toppings.length > 1) {
+    $(".result").append(" with "+this.toppings.slice(0, (this.toppings.length - 1)).join(", ").toLowerCase()+" and "+this.toppings.slice(this.toppings.length - 1).join().toLowerCase()+" will be "+this.cost+".")
+  }
+  else if (this.toppings.length === 1) {
+    $(".result").append(" with "+this.toppings[0].toLowerCase()+" will be "+this.cost+".")
+  }
+  else if (this.toppings.length === 0) {
+    $(".result").append(" will be "+this.cost+".")
+  }
+}
+
 var newPizza = new Pizza;
 $(document).ready(function () {
   $("#size-button").click(function () {
-    newPizza.size = 0;
-    newPizza.toppings = [];
-    newPizza.cost = 0;
-    newPizza.size = $("#size").val();
+    newPizza.new();
     $("input:checkbox[name=topping-check]:checked").each(function(){
       var newPizzaTopping = $(this).val();
       newPizza.toppings.push(newPizzaTopping);
     });
     newPizza.costCalc();
-    $(".result").text("Your "+$("#size option:selected").text().toLowerCase()+" pizza")
-    if (newPizza.toppings.length > 1) {
-      $(".result").append(" with "+newPizza.toppings.slice(0, (newPizza.toppings.length - 1)).join(", ").toLowerCase()+" and "+newPizza.toppings.slice(newPizza.toppings.length - 1).join().toLowerCase()+" will be "+newPizza.cost+".")
-    }
-    else if (newPizza.toppings.length === 1) {
-      $(".result").append(" with "+newPizza.toppings[0].toLowerCase()+" will be "+newPizza.cost+".")
-    }
-    else if (newPizza.toppings.length === 0) {
-      $(".result").append(" will be "+newPizza.cost+".")
-    }
+    newPizza.print();
   })
 });
