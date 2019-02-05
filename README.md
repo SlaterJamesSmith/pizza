@@ -9,11 +9,11 @@
 _A simple form that will calculate the cost of a single pizza purchase based on pie size and number of toppings._
 
 #### Program behavior specifications:
-* _The program will return unique pricing for pizza based on user input when the "calculate cost" button is clicked._
+* _The program will return unique pricing for pizza based on the user's input to the form whenever the "calculate cost" button is clicked._
 * _If the user asks for a small pizza with zero toppings, the program returns the lowest possible cost of $10._
-* _The user can choose zero to four toppings, each costing an extra $2. For example, a small pizza with two toppings will return $14 ($10 small pizza + two toppings at $2 each)._
-* _The user must choose one of four sizes. For each sequentially larger size, price increases by $3. For example, a medium pizza with three toppings will return $19 ($10 + $3 for a medium pizza + three toppings at $2 each) and an extra large pizza with no toppings will also return $19 ($10 + $3 + $3 + $3 for an extra large pizza + $0 in toppings)._
-* _The program returns an additional $2 in cost for each topping selected._
+* _The user can select zero to four toppings, each costing an extra $2. For example, a small pizza with two toppings will return $14 ($10 small pizza + two toppings at $2 each) when the "calculate cost" button is clicked._
+* _The user must choose one of four sizes. For each sequentially larger size above our $10 small pizza, price will increase by $3. For example, a medium pizza with three toppings will return $19 ($10 + $3 for a medium pizza + three toppings at $2 each) and an extra large pizza with no toppings will also return $19 ($10 + $3 + $3 + $3 for an extra large pizza + $0 in toppings)._
+* _The user may run the application as many times as s/he likes, and it will return a new output based on the new form inputs._
 
 ## Setup/Installation Requirements
 
