@@ -8,34 +8,33 @@ Pizza.prototype.costCalc = function () {
   this.cost = "$"+ (10 + (this.size * 3) + (this.toppings.length * 2));
 }
 
-Pizza.prototype.new = function () {
-  this.size = $("#size").val();
+Pizza.prototype.new = function (input) {
+  this.size = input;
   this.toppings = [];
   this.cost = 0;
 }
 
-Pizza.prototype.print = function () {
+function displayPizza(pizza) {
   $(".result").text("Your "+$("#size option:selected").text().toLowerCase()+" pizza")
-  if (this.toppings.length > 1) {
-    $(".result").append(" with "+this.toppings.slice(0, (this.toppings.length - 1)).join(", ").toLowerCase()+" and "+this.toppings.slice(this.toppings.length - 1).join().toLowerCase()+" will be "+this.cost+".")
+  if (pizza.toppings.length > 1) {
+    $(".result").append(" with "+pizza.toppings.slice(0, (pizza.toppings.length - 1)).join(", ").toLowerCase()+" and "+pizza.toppings.slice(pizza.toppings.length - 1).join().toLowerCase()+" will be "+pizza.cost+".")
   }
-  else if (this.toppings.length === 1) {
-    $(".result").append(" with "+this.toppings[0].toLowerCase()+" will be "+this.cost+".")
+  else if (pizza.toppings.length === 1) {
+    $(".result").append(" with "+pizza.toppings[0].toLowerCase()+" will be "+pizza.cost+".")
   }
-  else if (this.toppings.length === 0) {
-    $(".result").append(" will be "+this.cost+".")
+  else if (pizza.toppings.length === 0) {
+    $(".result").append(" will be "+pizza.cost+".")
   }
 }
-
-var newPizza = new Pizza;
 $(document).ready(function () {
+  var newPizza = new Pizza;
   $("#size-button").click(function () {
-    newPizza.new();
+    newPizza.new($("#size").val());
     $("input:checkbox[name=topping-check]:checked").each(function(){
       var newPizzaTopping = $(this).val();
       newPizza.toppings.push(newPizzaTopping);
     });
     newPizza.costCalc();
-    newPizza.print();
+    displayPizza(newPizza);
   });
 })
