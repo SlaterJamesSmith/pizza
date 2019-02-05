@@ -9,7 +9,7 @@
 _A simple form that will calculate the cost of a single pizza purchase based on pie size and number of toppings._
 
 #### Program behavior specifications:
-* _The program will return unique pricing for pizza based on the user's input to the form whenever the "calculate cost" button is clicked.
+* _The program will return unique pricing for pizza based on the user's input to the form whenever the "calculate cost" button is clicked._
   * _Example input: click "calculate cost" button_
   * _Example output: "Your pizza will be $19."_
 * _If the user asks for a small pizza with zero toppings, the program returns the lowest possible cost of $10._
@@ -21,7 +21,11 @@ _A simple form that will calculate the cost of a single pizza purchase based on 
 * _The user must choose one of four sizes. For each sequentially larger size above our $10 small pizza, price will increase by $3, plus $2 for each selected topping._
   * _Example input: select "Large" in form, and check "Extra Cheese" and "Anchovies" options, then click "calculate cost" button._
   * _Example output: "Your large pizza with extra cheese and anchovies will be $20."_
-* _The user may run the application as many times as s/he likes, and it will return a new output based on the new form inputs._
+* _The user may run the application as many times as s/he likes, and it will erase the last message, and return a new output based on the new form inputs._
+  * _Example input 1: click "calculate cost" button_
+  * _Example output 1: "Your extra large pizza will be $19."_
+  * _Example input 2: select "Large" in form, and check "Extra Cheese" and "Anchovies" options, then click "calculate cost" button._
+  * _Example output 2: "Your large pizza with extra cheese and anchovies will be $20."_
 
 ## Setup/Installation Requirements
 
